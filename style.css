@@ -1,0 +1,164 @@
+/* Fonts & Body */
+
+body {
+
+  margin: 0;
+
+  background: var(--bg-color, #0f1729);
+
+  font-family: 'Cormorant Garamond', serif;
+
+  box-sizing: border-box;
+
+}
+
+/* Card Surface */
+
+.card-surface {
+
+  background: var(--surface-color, #1a2744);
+
+  border: 1px solid rgba(201,168,76,0.2);
+
+  border-radius: 1rem;
+
+}
+
+/* Top/Bottom Bars */
+
+.card-top-bar,
+
+.card-bottom-bar {
+
+  background: linear-gradient(90deg, transparent, var(--accent-color, #c9a84c), transparent);
+
+}
+
+/* Icon background */
+
+.card-icon-bg {
+
+  background: rgba(201,168,76,0.1);
+
+  border: 1px solid rgba(201,168,76,0.3);
+
+}
+
+/* Icon color */
+
+.card-icon {
+
+  width: 28px;
+
+  height: 28px;
+
+  color: var(--accent-color, #c9a84c);
+
+}
+
+/* Animations */
+
+@keyframes floatUp {
+
+  0% { transform: translateY(100%) scale(0); opacity: 0; }
+
+  20% { opacity: 1; }
+
+  100% { transform: translateY(-120%) scale(1); opacity: 0; }
+
+}
+
+@keyframes fadeSlideIn {
+
+  from { opacity: 0; transform: translateY(30px); }
+
+  to { opacity: 1; transform: translateY(0); }
+
+}
+
+@keyframes shimmer {
+
+  0% { background-position: -200% center; }
+
+  100% { background-position: 200% center; }
+
+}
+
+@keyframes sparkle {
+
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+
+}
+
+/* Text Shimmer */
+
+.shimmer-text {
+
+  background: linear-gradient(90deg, var(--text-color, #FFD700) 40%, var(--accent-color, #FFD700) 50%, var(--text-color, #FFD700) 60%);
+
+  background-size: 200% auto;
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: shimmer 4s linear infinite;
+
+}
+
+/* Card text animation */
+
+.card-animate { animation: fadeSlideIn 1s ease forwards; }
+
+.delay-1 { animation-delay: 0.3s; opacity: 0; }
+
+.delay-2 { animation-delay: 0.6s; opacity: 0; }
+
+.delay-3 { animation-delay: 0.9s; opacity: 0; }
+
+.delay-4 { animation-delay: 1.2s; opacity: 0; }
+
+/* Sparkles */
+
+.sparkle-star {
+
+  position: absolute;
+
+  animation: sparkle var(--dur) ease-in-out infinite;
+
+  animation-delay: var(--del);
+
+}
+
+/* Confetti */
+
+.confetti-piece {
+
+  position: absolute;
+
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  animation: floatUp var(--duration) ease-in-out infinite;
+
+  animation-delay: var(--delay);
+
+}
+.card-message,
+
+.card-recipient,
+
+.card-sender,
+
+.card-subtitle,
+
+.card-closing {
+
+  color: #FFD700;
+
+}
